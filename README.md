@@ -4,6 +4,19 @@ A docker swarm password generator based on an XKCD cartoon
 ![XKCD Cartoon in question](https://imgs.xkcd.com/comics/password_strength.png)
 
 # Architecture
+
+## Micro-service architecture 
+    {            Docker Swarm              }
+    [               Docker                 ]
+    DB Stack -> APP Stack -> Webfront Stack
+    (DB INST)   (APP INST)   (WEB INST)
+    (DB INST)   (APP INST)   (WEB INST)
+    (DB INST)   (APP INST)   (WEB INST)
+    (DB INST)   (APP INST)   (WEB INST)
+    (DB INST)   (APP INST)   (WEB INST)
+    (DB INST)   (APP INST)   (WEB INST)
+    (DB INST)   (APP INST)   (WEB INST)
+
 ## Service 1
 Front end, powered by Flask, HTML, CSS and Javascript. Assembles everything and shows it all nicely using Twitter Bootstrap styling.
 ## Service 2
@@ -14,4 +27,25 @@ Picks two of these words and adds symbolism replacement.
 Is Database to hold all the users and their passwords.
 
 # Development Environment
-## GCP Server
+## GCP Server Setup
+1. Boot up GCP Server
+2. Edit instance and place key gennereated using     ssh-keygen
+3. ssh into server public IPv4 using Powershell
+4. Use VSCode Plug in to now connect into the server which should be listed as a remote connection. 
+
+For more info : <https://code.visualstudio.com/docs/remote/ssh>
+
+## Tools
++ Ubuntu 18.04
++ MS Visual Studio Code 
++ Twitter Bootstrap 5
++ Jenkins
++ Docker
++ Docker Swarm
++ Trello
+
+## Takeaways from previous project
+
+1. Avoid feature creep, really trim this project <https://github.com/78afec35/Personal-Project>
+2. Focus on success early on by reading the requirements
+3. Integrate early on. 
