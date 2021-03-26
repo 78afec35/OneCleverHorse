@@ -6,7 +6,7 @@ A docker swarm password generator based on an XKCD cartoon
 # Architecture
 
 ## Micro-service architecture 
-    {            Docker Swarm              }
+    {            Load Balancer             }
     [               Docker                 ]
     DB Stack -> APP Stack -> Webfront Stack
     (DB INST)   (APP INST)   (WEB INST)
@@ -36,6 +36,7 @@ Is Database to hold all the users and their passwords.
 For more info : <https://code.visualstudio.com/docs/remote/ssh>
 
 ## Tools
+
 + Ubuntu 18.04
 + MS Visual Studio Code 
 + Twitter Bootstrap 5
@@ -49,3 +50,26 @@ For more info : <https://code.visualstudio.com/docs/remote/ssh>
 1. Avoid feature creep, really trim this project <https://github.com/78afec35/Personal-Project>
 2. Focus on success early on by reading the requirements
 3. Integrate early on. 
+
+## Docker Compose Installation Script
+
+    # make sure jq & curl is installed
+    sudo apt update
+    sudo apt install -y curl jq
+    # set which version to download (latest)
+    version=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | jq -r '.tag_name')
+    # download to /usr/local/bin/docker-compose
+    sudo curl -L "https://github.com/docker/compose/releases/download/${version}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    # make the file executable
+    sudo chmod +x /usr/local/bin/docker-compose
+
+## Docker Swarm - Worker Creation Startup Script
+
+    #!/bin/bash 
+    sudo apt update
+    sudo apt install build-essential -y 
+    sudo apt install docker.io -y
+    sudo groupadd docker
+    sudo gpasswd -a $USER docker
+    sudo reboot
+    docker swarm join --token SWMTKN-1-5qh189liw1ahad0yen6kbf6stl0qxkez1144wn7azwg4w9ide8-7jgw3pql5nlkvii8f2ejht9pi 10.154.0.9:2377
