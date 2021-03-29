@@ -6,9 +6,11 @@ A docker swarm password generator based on an XKCD cartoon
 # Architecture
 
 ## Micro-service architecture 
-    {            Load Balancer             }
-    [               Docker                 ]
-    DB Stack -> APP Stack -> Webfront Stack
+
+                  Web Client
+    {            Load Balancer             }    
+    [               Docker                 ]    
+    DB Stack -> APP Stack -> Webfront Stack     
     (DB INST)   (APP INST)   (WEB INST)
     (DB INST)   (APP INST)   (WEB INST)
     (DB INST)   (APP INST)   (WEB INST)
