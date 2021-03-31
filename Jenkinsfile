@@ -22,9 +22,11 @@ pipeline{
     
         stage('Build Image'){
                 steps{
-                    
-                 sh "docker-compose build"
-                       
+                    script{
+                        if (env.rollback == 'false'){
+                            image = sh "sudo docker-compose build"
+                        }
+                    }
                 }
             }
         
