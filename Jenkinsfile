@@ -10,7 +10,7 @@ pipeline{
                 sh "sudo docker-compose down"
                 sh "sudo docker image prune -f -a"
                 sh "rm -rf OneCleverHorse/"
-                sh "git clone https://github.com/78afec35/OneCleverHorse"
+                sh "git clone https://github.com/78afec35/OneCleverHorse/tree/Docker"
             }
         }
     
