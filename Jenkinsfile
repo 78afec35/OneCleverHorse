@@ -1,9 +1,4 @@
 pipeline{
-    environment {
-        registry = "78afec35/onecleverhorse"
-        registryCredential = '78afec35' 
-        dockerImage = '' 
-    }
     agent any
     stages{
         stage('Clean and Download'){
@@ -23,11 +18,11 @@ pipeline{
             }
         }
     
-        // stage('Build'){
-        //     steps{
-        //         sh "sudo docker-compose build"
-        //     }
-        // }
+        stage('Build'){
+            steps{
+                sh "sudo docker-compose build"
+            }
+        }
         
         
         
