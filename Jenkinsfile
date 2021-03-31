@@ -8,7 +8,7 @@ pipeline{
         stage('Clean and Download'){
             steps{
                 sh "rm -rf OneCleverHorse/"
-                sh "git clone https://github.com/78afec35/OneCleverHorse/tree/Docker"
+                sh "git clone https://github.com/78afec35/OneCleverHorse"
             }
         }
     
