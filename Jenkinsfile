@@ -21,10 +21,20 @@ pipeline{
             }
         }
     
-        stage('Build'){
-            steps{
-                sh "sudo docker-compose build"
-            }
+        // stage('Build'){
+        //     steps{
+        //         sh "sudo docker-compose build"
+        //     }
+        // }
+        
+        
+        
+        stage('Naming Stack and Building') { 
+            steps { 
+                script { 
+                    dockerImage = docker-compose.build registry + ":$BUILD_NUMBER" 
+                }
+            } 
         }
         
         stage('Test'){
@@ -32,15 +42,7 @@ pipeline{
                 sh "sudo docker-compose up -d"
             }
         }
-        
-        stage('Naming Image') { 
-            steps { 
-                script { 
-                    dockerImage = docker.build registry + ":$BUILD_NUMBER" 
-                }
-            } 
-        }
-        
+
         stage('Pushing image') { 
             steps { 
                 script { 
