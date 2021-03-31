@@ -1,29 +1,33 @@
 version: "3.3"
 services:
   app-frontend:
+    image: 78afec35/app-frontend:${app_version}
     build: ./app-frontend
     ports:
     - target: 5000
       published: 5000
       protocol: tcp
   app-symboliser:
+    image: 78afec35/app-symboliser:${app_version}
     build: ./app-symboliser
     ports:
     - target: 5001
       published: 5001
       protocol: tcp
   app-word:
+    image: 78afec35/app-word:${app_version}
     build: ./app-word
     ports:
     - target: 5002
       published: 5002
       protocol: tcp
   mysql:
+    image: 78afec35/mysql:${app_version}
     build: ./db
     ports:
     - target: 3306
       published: 3306
       protocol: tcp
     environment: 
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: flask-db
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+        MYSQL_DATABASE: flask-db

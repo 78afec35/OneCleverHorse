@@ -1,5 +1,9 @@
 pipeline{
     agent any
+    environment {
+            app_version = ":$BUILD_NUMBER"
+            rollback = 'false'
+        }
     stages{
         stage('Clean and Download'){
             steps{
@@ -18,12 +22,15 @@ pipeline{
             }
         }
     
-        stage('Build'){
-            steps{
-                sh "sudo docker-compose build"
+        stage('Build Image'){
+                steps{
+                    script{
+                        if (env.rollback == 'false'){
+                            image = docker.build("[your-dockerhub-username]/chaperoo-frontend")
+                        }
+                    }
+                }
             }
-        }
-        
         
         
         stage('Naming Stack and Building') { 
@@ -36,13 +43,7 @@ pipeline{
         
         stage('Test'){
             steps{
-                sh "sudo docker-compose up -d"
-            }
-        }
-
-        stage('Pushing image') { 
-            steps { 
-                sh "sudo docker push"
+                sh "sudo docker-compose pull && docker-compose up -d"
             }
         } 
 
