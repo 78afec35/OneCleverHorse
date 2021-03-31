@@ -26,20 +26,12 @@ pipeline{
                 steps{
                     script{
                         if (env.rollback == 'false'){
-                            image = docker.build("[your-dockerhub-username]/chaperoo-frontend")
+                            image = docker.build("78afec35/onecleverhorse")
                         }
                     }
                 }
             }
         
-        
-        stage('Naming Stack and Building') { 
-            steps { 
-                script { 
-                    dockerImage = docker-compose.build registry + ":$BUILD_NUMBER" 
-                }
-            } 
-        }
         
         stage('Test'){
             steps{
