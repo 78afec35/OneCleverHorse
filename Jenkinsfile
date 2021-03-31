@@ -45,11 +45,7 @@ pipeline{
 
         stage('Pushing image') { 
             steps { 
-                script { 
-                    docker.withRegistry( '', registryCredential ) { 
-                        dockerImage.push() 
-                    }
-                } 
+                sh "sudo docker push"
             }
         } 
 
