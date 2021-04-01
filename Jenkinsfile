@@ -39,7 +39,7 @@ pipeline{
             }
         stage('Test'){
             steps{
-                sh "sudo docker-compose pull && docker-compose up -d"
+                sh "sudo docker-compose pull && sudo docker-compose up -d"
             }
         } 
 
