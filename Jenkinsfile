@@ -1,5 +1,9 @@
 pipeline{
     agent any
+    environment {
+            app_version = ":$BUILD_NUMBER"
+            rollback = 'false'
+        }
     stages{
         stage('Clean and Download'){
             steps{
@@ -19,7 +23,8 @@ pipeline{
         stage('Build Image'){
                 steps{
 
-                    sh "sudo docker image prune -f -a && docker-compose build"
+                    sh "sudo docker image prune -f -a"
+                    sh "sudo docker-compose build"
                 
                 }
             }

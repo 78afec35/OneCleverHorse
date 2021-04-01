@@ -29,5 +29,5 @@ services:
       published: 3306
       protocol: tcp
     environment: 
-      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
-        MYSQL_DATABASE: flask-db
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: flask-db
