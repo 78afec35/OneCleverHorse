@@ -22,7 +22,7 @@ pipeline{
     
         stage('Build Image'){
                 steps{
-                    
+
                     sh "sudo docker image prune -f -a"
                     sh "sudo docker-compose build"
                 
@@ -31,13 +31,10 @@ pipeline{
         
         stage('Tag & Push Image'){
                 steps{
-                    script{
-                        if (env.rollback == 'false'){
-                            docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials'){
-                                image.push("${env.app_version}")
-                            }
-                        }
-                    }
+                
+                        
+                sh ("sudo docker-compose push", 'docker-hub-credentials')
+                            
                 }
             }
         stage('Test'){
