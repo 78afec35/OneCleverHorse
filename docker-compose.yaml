@@ -1,28 +1,24 @@
 version: "3.3"
 services:
   app-frontend:
-    image: onecleverhorse/app-frontend
     build: ./app-frontend
     ports:
     - target: 5000
       published: 5000
       protocol: tcp
   app-symboliser:
-    image: onecleverhorse/app-symboliser
     build: ./app-symboliser
     ports:
     - target: 5001
       published: 5001
       protocol: tcp
   app-word:
-    image: onecleverhorse/app-word
     build: ./app-word
     ports:
     - target: 5002
       published: 5002
       protocol: tcp
   mysql:
-    image: onecleverhorse/mysql
     build: ./db
     ports:
     - target: 3306
