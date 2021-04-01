@@ -22,11 +22,10 @@ pipeline{
     
         stage('Build Image'){
                 steps{
-                    script{
-                        if (env.rollback == 'false'){
-                            image = sh "sudo docker-compose build"
-                        }
-                    }
+                    
+                    sh "sudo docker image prune -f -a"
+                    sh "sudo docker-compose build"
+                
                 }
             }
         
