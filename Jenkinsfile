@@ -33,7 +33,7 @@ pipeline{
                 steps{
                 
                         
-                sh ("sudo docker-compose push", 'docker-hub-credentials')
+                sh "sudo docker-compose push " 
                             
                 }
             }
