@@ -23,8 +23,8 @@ pipeline{
         stage('Build Image'){
                 steps{
 
-                    sh "sudo docker image prune -f -a"
-                    sh "sudo docker-compose build"
+                    sh "docker image prune -f -a"
+                    sh "docker-compose build"
                 
                 }
             }
@@ -33,13 +33,13 @@ pipeline{
                 steps{
                 
                         
-                sh "sudo docker-compose push " 
+                sh "docker-compose push" 
                             
                 }
             }
         stage('Test'){
             steps{
-                sh "sudo docker-compose pull && sudo docker-compose up -d"
+                sh "docker-compose pull && sudo docker-compose up -d"
             }
         } 
 
@@ -47,8 +47,8 @@ pipeline{
 
         stage('Clean up'){
             steps{
-                sh "sudo docker-compose down"
-                sh "sudo docker image prune -f -a"
+                sh "docker-compose down"
+                sh "docker image prune -f -a"
             }
         }
                 
