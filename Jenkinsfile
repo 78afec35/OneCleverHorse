@@ -33,9 +33,14 @@ pipeline{
                 steps{
                 
                         
-                sh "docker-compose push" 
-                            
-                }
+                    script{
+                            if (env.rollback == 'false'){
+                                docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials'){
+                                    image.push("${env.BUILD_URL}")
+                                }
+                            } 
+                                
+                    }
             }
         stage('Test'){
             steps{
