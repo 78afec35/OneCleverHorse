@@ -52,14 +52,12 @@ pipeline{
         }
         stage('Ansible Config'){
             steps{
-                sh "docker-compose down"
-                sh "docker image prune -f -a"
+                sh "pwd"
             }
         }
         stage('Stack Deploy'){
             steps{
-                sh "docker-compose down"
-                sh "docker image prune -f -a"
+                sh "pwd"
             }
         }
                 
