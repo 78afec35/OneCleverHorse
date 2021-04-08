@@ -1,24 +1,28 @@
-version: "3.3"
+version: "3.8"
 services:
   app-frontend:
+    image: 78afec35/och-app-frontend:${app_version}
     build: ./app-frontend
     ports:
     - target: 5000
       published: 5000
       protocol: tcp
   app-symboliser:
+    image: 78afec35/och-app-symboliser:${app_version}
     build: ./app-symboliser
     ports:
     - target: 5001
       published: 5001
       protocol: tcp
   app-word:
+    image: 78afec35/och-app-word:${app_version}
     build: ./app-word
     ports:
     - target: 5002
       published: 5002
       protocol: tcp
   mysql:
+    image: 78afec35/och-app-mysql:${app_version}
     build: ./db
     ports:
     - target: 3306

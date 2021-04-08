@@ -1,7 +1,7 @@
 pipeline{
     agent any
     environment {
-            app_version = ":$BUILD_NUMBER"
+            app_version = "$BUILD_NUMBER"
             rollback = 'false'
         }
     stages{
@@ -30,17 +30,14 @@ pipeline{
                     }
                 }
             }
-        stage('Tag Images'){
-                steps{
-                    script{
-                        if (env.rollback == 'false'){
-                            docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials'){
-                                image.push("${env.app_version}")
-                            }
-                        }
-                    }    
-                }
+        
+        stage('Run tests'){
+            steps{
+                sh "sudo sh ./tests.sh"
+
             }
+        }
+        
         stage('Push Image'){
                 steps{
                     sh "docker-compose push"  
