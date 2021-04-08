@@ -21,7 +21,7 @@ pipeline{
             }
         }
     
-    stage('Run tests'){
+        stage('Run tests'){
             steps{
                 sh "sudo sh ./tests.sh"
 
