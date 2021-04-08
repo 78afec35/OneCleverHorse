@@ -16,32 +16,34 @@ pipeline{
         stage('Set Up Environment'){
             steps{
                 sh "sudo sh ./startupscript.sh"
+                sh "docker image prune -f -a"
 
             }
         }
     
         stage('Build Image'){
                 steps{
-
-                    sh "docker image prune -f -a"
-                    sh "docker-compose build"
-                
+                    script{
+                        if (env.rollback == 'false'){
+                            image = docker.build("78afec35/onecleverhorse")
+                        }
+                    }
                 }
             }
-        
-        stage('Tag & Push Image'){
+        stage('Tag Images'){
                 steps{
-                
-                        
                     script{
-                            if (env.rollback == 'false'){
-                                docker.withRegistry('https://registry.hub.docker.com'){
-                                    image.push("${env.BUILD_URL}")
-                                }
-                            } 
-                                
+                        if (env.rollback == 'false'){
+                            docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials'){
+                                image.push("${env.app_version}")
+                            }
+                        }
                     }    
-                    
+                }
+            }
+        stage('Push Image'){
+                steps{
+                    sh "docker-compose push"  
                 }
             }
         stage('Test'){
