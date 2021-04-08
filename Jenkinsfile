@@ -34,13 +34,6 @@ pipeline{
                 }
             }
         
-        stage('Run tests'){
-            steps{
-                sh "sudo sh ./tests.sh"
-
-            }
-        }
-        
         stage('Push Image'){
                 steps{
                     sh "docker-compose push"  
