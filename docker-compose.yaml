@@ -1,4 +1,5 @@
 version: "3.8"
+
 services:
   app-frontend:
     image: 78afec35/och-app-frontend:${app_version}
