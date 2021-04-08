@@ -41,7 +41,7 @@ pipeline{
             }
         stage('Test Deploy'){
             steps{
-                sh "docker-compose pull && sudo docker-compose up ${app_version}-d"
+                sh "docker-compose pull && sudo docker-compose up ${app_version} -d"
             }
         } 
         stage('Clean up'){
