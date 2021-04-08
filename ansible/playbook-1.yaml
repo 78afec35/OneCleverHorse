@@ -1,0 +1,9 @@
+- hosts: all
+  become: true
+  roles:
+  -python
+  -pytest
+  -docker
+  -docker-compose
+  -jenkins
+  -ansible
