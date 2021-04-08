@@ -41,7 +41,7 @@ pipeline{
             }
         stage('Test Deploy'){
             steps{
-                sh "sudo docker-compose up -d"
+                sh "docker-compose up -d"
             }
         } 
         stage('Clean up'){

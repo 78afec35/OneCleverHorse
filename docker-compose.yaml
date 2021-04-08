@@ -2,28 +2,28 @@ version: "3.8"
 
 services:
   app-frontend:
-    image: 78afec35/och-app-frontend:${BUILD_NUMBER}
+    image: 78afec35/och-app-frontend:${app_version}
     build: ./app-frontend
     ports:
     - target: 5000
       published: 5000
       protocol: tcp
   app-symboliser:
-    image: 78afec35/och-app-adjective:${BUILD_NUMBER}
+    image: 78afec35/och-app-adjective:${app_version}
     build: ./app-adjective
     ports:
     - target: 5001
       published: 5001
       protocol: tcp
   app-word:
-    image: 78afec35/och-app-noun:${BUILD_NUMBER}
+    image: 78afec35/och-app-noun:${app_version}
     build: ./app-noun
     ports:
     - target: 5002
       published: 5002
       protocol: tcp
   mysql:
-    image: 78afec35/och-app-mysql:${BUILD_NUMBER}
+    image: 78afec35/och-app-mysql:${app_version}
     build: ./db
     ports:
     - target: 3306
