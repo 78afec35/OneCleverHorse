@@ -21,6 +21,13 @@ pipeline{
             }
         }
     
+    stage('Run tests'){
+            steps{
+                sh "sudo sh ./tests.sh"
+
+            }
+        }
+    
         stage('Build Image'){
                 steps{
                   sh "docker-compose build"  
@@ -39,15 +46,24 @@ pipeline{
                     sh "docker-compose push"  
                 }
             }
-        stage('Test'){
+        stage('Test Deploy'){
             steps{
                 sh "docker-compose pull && sudo docker-compose up -d"
             }
         } 
-
-        
-
         stage('Clean up'){
+            steps{
+                sh "docker-compose down"
+                sh "docker image prune -f -a"
+            }
+        }
+        stage('Ansible Config'){
+            steps{
+                sh "docker-compose down"
+                sh "docker image prune -f -a"
+            }
+        }
+        stage('Stack Deploy'){
             steps{
                 sh "docker-compose down"
                 sh "docker image prune -f -a"

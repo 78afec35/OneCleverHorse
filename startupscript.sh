@@ -1,3 +1,4 @@
+#!/bin/bash
 sudo apt update
 sudo apt install build-essential -y 
 sudo apt install docker.io -y
