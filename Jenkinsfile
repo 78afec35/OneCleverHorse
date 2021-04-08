@@ -23,11 +23,7 @@ pipeline{
     
         stage('Build Image'){
                 steps{
-                    script{
-                        if (env.rollback == 'false'){
-                            image = docker.build("78afec35/onecleverhorse")
-                        }
-                    }
+                  sh "docker-compose build"  
                 }
             }
         
