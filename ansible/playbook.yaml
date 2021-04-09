@@ -1,0 +1,13 @@
+- hosts: swarm-managers
+  roles:
+  - docker
+  - manager
+
+- hosts: swarm-workers
+  roles:
+  - docker
+  - worker
+
+- hosts: nginx
+  roles:
+  - nginx

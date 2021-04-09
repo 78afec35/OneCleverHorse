@@ -1,0 +1,9 @@
+---
+# tasks file for manager
+- name: Init a new swarm with default parameters
+  community.docker.docker_swarm:
+    state: present
+  register: swarm_info
+- name: Print swarm parameters
+  debug:
+    msg: "{{ swarm_info }}"

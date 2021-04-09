@@ -52,12 +52,12 @@ pipeline{
         }
         stage('Ansible Config'){
             steps{
-                sh "pwd"
+                sh "cd ansible && ansible-playbook -i inventory.yaml playbook.yaml"
             }
         }
         stage('Stack Deploy'){
             steps{
-                sh "pwd"
+                sh "sudo sh ./stack_run.sh"
             }
         }
                 

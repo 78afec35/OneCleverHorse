@@ -1,0 +1,20 @@
+all:
+  children:
+      swarm-managers:
+        hosts:
+          swarm-manager:
+      swarm-workers:
+        hosts:
+          swarm-worker1:
+          swarm-worker2:
+      nginx:
+        hosts:
+          rproxy:
+  
+  vars: 
+    ansible_user: hired_mark
+    ansible_ssh_private_key_file: "~/.ssh/id_rsa"
+    ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
+    docker_users:
+      - username: jenkins
+      - username: hired_mark
