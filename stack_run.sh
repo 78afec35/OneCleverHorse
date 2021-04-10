@@ -6,4 +6,4 @@ pwd
 docker image prune -f -a
 docker-compose pull
 docker-compose build
-docker stack deploy -c stack-deploy.yaml OneCleverHorse
+docker stack deploy -c docker-compose.yaml OneCleverHorse
