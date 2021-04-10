@@ -21,8 +21,8 @@ ssh -tt -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no jenkins@swarm-manager << EO
     docker service scale onecleverhorsestack_appnoun=5
     docker service scale onecleverhorsestack_appcombiner=10
     docker service scale onecleverhorsestack_appcombiner=5
-    docker service scale onecleverhorsestack_appfrontend =10
-    docker service scale onecleverhorsestack_appfrontend =5
+    docker service scale onecleverhorsestack_appfrontend=10
+    docker service scale onecleverhorsestack_appfrontend=5
     docker service scale onecleverhorsestack_appadjective=10
     docker service scale onecleverhorsestack_appadjective=5
     docker stack services onecleverhorsestack
