@@ -11,7 +11,6 @@ services:
     environment: 
       DATABASE_URI: ${DATABASE_URI}
       SECRET_KEY: ${SECRET_KEY}
-      app_version: ${BUILD_NUMBER}
   app-symboliser:
     image: 78afec35/och-app-adjective:${app_version}
     build: ./app-adjective
