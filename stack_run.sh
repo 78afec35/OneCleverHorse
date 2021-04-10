@@ -5,7 +5,7 @@ ssh -tt -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no jenkins@swarm-manager << EO
     export SECRET_KEY=${SECRET_KEY}
     docker image prune -f -a
     docker rmi -f -a
-    docker rm $(docker ps -a -f -q)
+    docker rm -f -a
     docker ps
     docker stack deploy --compose-file /home/jenkins/docker-compose.yaml onecleverhorsestack
 EOF
