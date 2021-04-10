@@ -2,10 +2,10 @@
 # tasks file for manager
 - name: Add Jenkins user
   user: 
-  name: jenkins
-  groups: docker
-  shell: /bin/bash
-  append: true
+    name: jenkins
+    groups: docker
+    shell: /bin/bash
+    append: true
 
 - name: Init a new swarm with default parameters
   community.docker.docker_swarm:
