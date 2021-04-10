@@ -2,7 +2,8 @@
 # tasks file for manager
 - name: Add Jenkins user
   user: 
-  name: jenkinsgroups: docker
+  name: jenkins
+  groups: docker
   shell: /bin/bash
   append: true
 
@@ -10,7 +11,7 @@
   community.docker.docker_swarm:
     state: present
   register: swarm_info
-  
+
 - name: Print swarm parameters
   debug:
     msg: "{{ swarm_info }}"
