@@ -1,7 +1,6 @@
 pipeline{
     agent any
     environment {
-            app_version = "99"
             DATABASE_URI = credentials("DATABASE_URI")
             SECRET_KEY = credentials("SECRET_KEY")
             rollback = 'false'

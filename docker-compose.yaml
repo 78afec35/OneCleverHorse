@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   app-frontend:
-    image: 78afec35/och-app-frontend:${app_version}
+    image: 78afec35/och-app-frontend:99
     build: ./app-frontend
     ports:
     - target: 5000
@@ -12,21 +12,21 @@ services:
       DATABASE_URI: ${DATABASE_URI}
       SECRET_KEY: ${SECRET_KEY}
   app-symboliser:
-    image: 78afec35/och-app-adjective:${app_version}
+    image: 78afec35/och-app-adjective:99
     build: ./app-adjective
     ports:
     - target: 5001
       published: 5001
       protocol: tcp
   app-word:
-    image: 78afec35/och-app-noun:${app_version}
+    image: 78afec35/och-app-noun:99
     build: ./app-noun
     ports:
     - target: 5002
       published: 5002
       protocol: tcp
   app-combiner:
-    image: 78afec35/och-app-combiner:${app_version}
+    image: 78afec35/och-app-combiner:99
     build: ./app-combiner
     ports:
     - target: 5003
