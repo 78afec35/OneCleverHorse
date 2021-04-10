@@ -2,7 +2,8 @@
 sudo apt update
 sudo apt install build-essential -y 
 sudo apt install python3 python3-pip -y
-sudo pip3 install pytest pytest-cov
+sudo pip3 install pytest 
+sudo pip3 install pytest-cov
 sudo apt install docker.io -y
 sudo apt install -y curl jq
 version=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | jq -r '.tag_name')
