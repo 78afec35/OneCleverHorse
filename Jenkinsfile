@@ -18,6 +18,8 @@ pipeline{
             steps{
                 sh "sudo sh ./startupscript.sh"
                 sh "docker image prune -f -a"
+                sh "docker rmi -f -a"
+                sh "docker rm $(docker ps -a -f status=exited -q)"
                 sh "pwd"
 
             }
