@@ -17,5 +17,10 @@ ssh -tt -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no jenkins@swarm-manager << EO
     docker-compose --version
     docker stack deploy --compose-file /home/jenkins/OneCleverHorse/docker-compose.yaml onecleverhorsestack
     docker stack services onecleverhorsestack
+    docker service scale onecleverhorsestack_appnoun=5
+    docker service scale onecleverhorsestack_appcombiner=5
+    docker service scale onecleverhorsestack_appfrontend =5
+    docker service scale onecleverhorsestack_appadjective=5
+    docker stack services onecleverhorsestack
     pwd
 EOF
