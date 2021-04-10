@@ -9,8 +9,9 @@ ssh -tt -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no jenkins@swarm-manager << EO
     cd OneCleverHorse
     pwd
     docker image prune -f -a
-    docker rmi -f -a
-    docker rm -f -a
+    docker rmi -f
+    docker rm -f
     docker ps
+    docker services ps
     docker stack deploy --compose-file /home/jenkins/OneCleverHorse/docker-compose.yaml onecleverhorsestack
 EOF
