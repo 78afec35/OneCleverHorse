@@ -1,20 +1,17 @@
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
+from os import getenv
 
 app = Flask(__name__)
 db = SQLAlchemy(app)
 
 # Replace [PASSWORD] with the root password for your mysql container
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:password@mysql:3306/flask-db'
+app.config['SQLALCHEMY_DATABASE_URI'] = getenv("DATABASE_URI")
 
 class Users(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
-	first_name = db.Column(db.String(30), nullable=False)
-	last_name = db.Column(db.String(30), nullable=False)
-	email = db.Column(db.String(150), nullable=False, unique=True)
-	def __repr__(self):
-		return ''.join(['User ID: ', str(self.id), '\r\n', 'Email: ', self.email, ' Name: ', self.first_name, ' ', self.last_name, '\n'])
-
+	username = db.Column(db.String(30), nullable=False)
+	password = db.Column(db.String(30), nullable=False)
 
 @app.route('/')
 def hello():
