@@ -22,13 +22,10 @@ services:
     - target: 5002
       published: 5002
       protocol: tcp
-  mysql:
-    image: 78afec35/och-app-mysql:${app_version}
-    build: ./db
+  app-combiner:
+    image: 78afec35/och-app-combiner:${app_version}
+    build: ./app-combiner
     ports:
-    - target: 3306
-      published: 3306
+    - target: 5003
+      published: 5003
       protocol: tcp
-    environment: 
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: flask-db
