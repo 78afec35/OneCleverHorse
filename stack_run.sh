@@ -2,6 +2,8 @@
 ssh -tt -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no jenkins@swarm-manager << EOF
     export DATABASE_URI=${DATABASE_URI}
     export SECRET_KEY=${SECRET_KEY}
+    print SECRET_KEY
+    print DATABASE_URI
     rm -rf OneCleverHorse
     git clone https://github.com/78afec35/OneCleverHorse
     cd OneCleverHorse
