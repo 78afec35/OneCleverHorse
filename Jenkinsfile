@@ -2,6 +2,8 @@ pipeline{
     agent any
     environment {
             app_version = "$BUILD_NUMBER"
+            DATABASE_URI = credentials("DATABASE_URI")
+            SECRET_KEY = credentials("SECRET_KEY")
             rollback = 'false'
         }
     stages{

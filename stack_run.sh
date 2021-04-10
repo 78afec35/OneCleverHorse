@@ -1,11 +1,8 @@
 #!/bin/bash
-export BUILD_NUMBER = $BUILD_NUMBER
-export DATABASE_URI = $DATABASE_URI
-ssh jenkins@swarm-manager "$BUILD_NUMBER"
-rm -rf OneCleverHorse/
-git clone https://github.com/78afec35/OneCleverHorse && cd OneCleverHorse
-pwd
-docker image prune -f -a
-docker-compose pull
-docker-compose build
-docker stack deploy -c docker-compose.yaml OneCleverHorse
+scp -i ~/.ssh/id_rsa docker-compose.yaml jenkins@swarm-manager:/home/jenkins/docker-compose.yaml
+ssh -i ~/.ssh/id_rsa jenkins@swarm-manager << EOF
+    export DATABASE_URI=${DATABASE_URI}
+    export SECRET_KEY=${SECRET_KEY}
+    export BUILD_NUMBER=${BUILD_NUMBER}
+    docker stack deploy --compose-file /home/jenkins/docker-compose.yaml OneCleverHorse
+EOF
