@@ -16,8 +16,8 @@ pipeline{
 
         stage('Set Up Environment'){
             steps{
-                // sh "sudo sh ./startupscript.sh"
-                // sh "docker image prune -f -a"
+                sh "sudo sh ./startupscript.sh"
+                sh "docker image prune -f -a"
                 sh "pwd"
 
             }
@@ -25,7 +25,7 @@ pipeline{
     
         stage('Run tests'){
             steps{
-                // sh "sudo sh ./tests.sh"
+                sh "sudo sh ./tests.sh"
                 sh "pwd"
 
             }
@@ -33,27 +33,27 @@ pipeline{
     
         stage('Build Image'){
                 steps{
-                //   sh "docker-compose build" 
+                  sh "docker-compose build" 
                   sh "pwd" 
                 }
             }
         
         stage('Push Image'){
                 steps{
-                    // sh "docker-compose push" 
+                    sh "docker-compose push" 
                     sh "pwd" 
                 }
             }
         stage('Test Deploy'){
             steps{
-                // sh "docker-compose up -d"
+                sh "docker-compose up -d"
                 sh "pwd"
             }
         } 
         stage('Clean up'){
             steps{
-                // sh "docker-compose down"
-                // sh "docker image prune -f -a"
+                sh "docker-compose down"
+                sh "docker image prune -f -a"
                 sh "pwd"
             }
         }
