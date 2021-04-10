@@ -1,4 +1,7 @@
 #!/bin/bash
+ssh -tt -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no jenkins@swarm-manager << EOF
+    sudo rm -rf /home/jenkins/docker-compose.yaml
+EOF
 scp -tt -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no docker-compose.yaml jenkins@swarm-manager:/home/jenkins/docker-compose.yaml 
 ssh -tt -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no jenkins@swarm-manager << EOF
     export DATABASE_URI=${DATABASE_URI}
