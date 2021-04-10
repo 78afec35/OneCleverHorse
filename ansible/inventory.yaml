@@ -17,5 +17,5 @@ all:
     ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
     docker_users:
       - username: jenkins
-    app_version: $BUILD_NUMBER
+    app_version: ${BUILD_NUMBER}
     DATABASE_URI: ${DATABASE_URI}
