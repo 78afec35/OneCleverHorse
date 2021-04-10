@@ -11,14 +11,14 @@ services:
     environment: 
       DATABASE_URI: ${DATABASE_URI}
       SECRET_KEY: ${SECRET_KEY}
-  app-symboliser:
+  app-adjective:
     image: 78afec35/och-app-adjective:99
     build: ./app-adjective
     ports:
     - target: 5001
       published: 5001
       protocol: tcp
-  app-word:
+  app-noun:
     image: 78afec35/och-app-noun:99
     build: ./app-noun
     ports:
