@@ -8,7 +8,6 @@ services:
     - target: 5000
       published: 5000
       protocol: tcp
-    replicas: 5
   app-symboliser:
     image: 78afec35/och-app-adjective:${app_version}
     build: ./app-adjective
@@ -16,7 +15,6 @@ services:
     - target: 5001
       published: 5001
       protocol: tcp
-    replicas: 5
   app-word:
     image: 78afec35/och-app-noun:${app_version}
     build: ./app-noun
@@ -24,7 +22,6 @@ services:
     - target: 5002
       published: 5002
       protocol: tcp
-    replicas: 5
   app-combiner:
     image: 78afec35/och-app-combiner:${app_version}
     build: ./app-combiner
@@ -32,4 +29,3 @@ services:
     - target: 5003
       published: 5003
       protocol: tcp
-    replicas: 5
