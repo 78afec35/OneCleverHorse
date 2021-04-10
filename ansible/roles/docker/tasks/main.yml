@@ -48,5 +48,6 @@
   become: true
   pip: 
     name: docker-py
+    state: latest
 
 
