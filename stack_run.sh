@@ -28,3 +28,4 @@ ssh -tt -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no jenkins@swarm-manager << EO
     docker stack services onecleverhorsestack
     pwd
 EOF
+echo "This pipeline has completed!"

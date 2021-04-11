@@ -23,22 +23,11 @@ A docker swarm password generator based on an XKCD cartoon
     * [Jenkins - Pipeline and testing](#Jenkins---Pipeline-and-testing)
     * [Docker Repository - Artifact Repository](#Docker-Repository---Artifact-Repository)
 * [Risk Assesment](#Risk-Assesment)
-* [Tools](#Tools)
-* [Tools](#Tools)
-* [Tools](#Tools)
-* [Tools](#Tools)
-* [Tools](#Tools)
-* [Tools](#Tools)
-* [Tools](#Tools)
-* [Tools](#Tools)
-* [Tools](#Tools)
-* [Tools](#Tools)
-* [Tools](#Tools)
-* [Risk Assessment](#risk-assessment)
-* [Testing](#testing)
-* [Front-End Design](#front-end-design)
-* [Known Issues](#known-issues)
+    * [SWOT Analysis](#SWOT-Analysis)
+    * [Risk assessment Matrix and Particular Issues](#Risk-assessment-Matrix-and-Particular-Issues)
+* [Testing](#Testing)
 * [Future Improvements](#future-improvements)
+* [References](#References)
 
 # Architecture
 
@@ -262,6 +251,16 @@ Docker Credentials have to be inputted manually which further adds to technical 
 
 This results in the Database not being part of the CI/CD pipeline and becoming vulnerable to configuration errors and mismanagement.
 
+# Testing
+
+At this point in time it is incomplete. 
+Jenkins does do a fair amount of testings on its own. However I would have liked to involve native python and flask testing utilities as well as integration testing like Selinium to ensure the swarm cloud is up and running properly. 
+
+# Future Improvements
+
+1. Obviously with more time I would have liked to complete the project. This involves intergration with a database and testing. 
+2. Better layout for the front end. I would have liked it to be pretier. 
+3. Increased complexity, with the adition of a database I would have liked to be able to create large lists of users and passwords and export them as JSON for the user.
 
 # References 
 1. noun list - https://github.com/dariusk/corpora/blob/master/data/words/nouns.json
