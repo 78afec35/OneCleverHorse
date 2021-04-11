@@ -136,9 +136,9 @@ Jenkins has been part of the development process since the start this time.
 You can inspect it on this address <http://34.89.33.141:8080/job/OneCleverHorse/>
 Credentials set up for you:
 
-user: Jenkins
+user: Testing
 
-password: Jenkins
+password: testing
 
 ![Jeknins](./ReadmeAssets/Jenkins.png) 
 
