@@ -1,6 +1,6 @@
 import random
 import json
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, Responce
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -13,7 +13,7 @@ def comb():
     noun1 = request.args.get('http://localhost:5002/noun')
     noun2 = request.args.get('http://localhost:5002/noun')
     rcomb = txt.title(adj1)+txt.title(noun1)+txt.title(adj2)+txt.title(noun2)
-    return rcomb
+    return Responce( str(rcomb), mimetype='text/plain' )
 
 
 if __name__ == '__main__':

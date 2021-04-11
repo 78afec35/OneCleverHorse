@@ -1,6 +1,6 @@
 import random
 import json
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, Response
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -17,7 +17,7 @@ randomnoun = random.choice(nounlist)
 @app.route('/noun', methods=['GET', 'POST'])
 def noun():
     rnoun = randomnoun
-    return rnoun
+    return Responce( str(rnoun), mimetype='text/plain' )
 
 
 if __name__ == '__main__':

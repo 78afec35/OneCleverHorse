@@ -1,6 +1,6 @@
 import random
 import json
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, Responce
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -17,7 +17,7 @@ randomadj = random.choice(adjlist)
 @app.route('/adj', methods=['GET', 'POST'])
 def adj():
     radj = randomadj
-    return radj
+    return Responce( str(radj), mimetype='text/plain' )
 
 
 if __name__ == '__main__':
