@@ -27,5 +27,6 @@ ssh -tt -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no jenkins@swarm-manager << EO
     docker service scale onecleverhorsestack_appadjective=3
     docker stack services onecleverhorsestack
     pwd
+    exit
 EOF
 echo "This pipeline has completed!"
