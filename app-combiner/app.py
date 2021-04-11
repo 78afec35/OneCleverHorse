@@ -6,7 +6,7 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 
 
-@app.route('/comb', method=["GET", "POST"])
+@app.route('/comb', method=['GET', 'POST'])
 def comb():
     adj1 = request.get('http://localhost:5001/adj')
     adj2 = request.get('http://localhost:5001/adj')

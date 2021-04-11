@@ -6,7 +6,7 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 
 
-@app.route('/', method=["GET"])
+@app.route('/', method=['GET', 'POST'])
 def home():
     rcomb = request.get('http://localhost:5003/rcomb')
     return render_template('index.html', rcomb=rcomb)
