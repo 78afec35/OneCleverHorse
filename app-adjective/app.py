@@ -1,6 +1,6 @@
 import random
 import json
-from flask import Flask, request, render_template, Responce
+from flask import Flask, request, render_template, Response
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
