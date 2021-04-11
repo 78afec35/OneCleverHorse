@@ -6,12 +6,12 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 
 
-@app.route('/comb', methods=["GET"])
+@app.route('/comb', method=["GET"])
 def comb():
-    adj1 = request.args.get('http://localhost:5001/adj')
-    adj2 = request.args.get('http://localhost:5001/adj')
-    noun1 = request.args.get('http://localhost:5002/noun')
-    noun2 = request.args.get('http://localhost:5002/noun')
+    adj1 = request.get('http://localhost:5001/adj')
+    adj2 = request.get('http://localhost:5001/adj')
+    noun1 = request.get('http://localhost:5002/noun')
+    noun2 = request.get('http://localhost:5002/noun')
     rcomb = txt.title(adj1)+txt.title(noun1)+txt.title(adj2)+txt.title(noun2)
     return rcomb
 
