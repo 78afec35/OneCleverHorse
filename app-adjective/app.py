@@ -1,5 +1,6 @@
 import random
 import json
+from requests import *
 from flask import Flask, request, render_template, Response
 from flask_sqlalchemy import SQLAlchemy
 
