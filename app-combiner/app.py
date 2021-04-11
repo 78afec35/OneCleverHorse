@@ -12,7 +12,7 @@ def comb():
 	noun1=request.get(http://localhost:5002/noun)
 	noun2=request.get(http://localhost:5002/noun)
 	rcomb = txt.title(adj1)+txt.title(noun1)+txt.title(adj2)+txt.title(noun2)
-  return rcomb
+  	return rcomb
 
 if __name__=='__main__':
   app.run(host='0.0.0.0', port=5001, debug=True)

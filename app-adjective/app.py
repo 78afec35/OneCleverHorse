@@ -15,7 +15,7 @@ randomadj = random.choice(adjlist)
 @app.route('/adj', methods=["GET"])
 def adj():
 	radj = randomadj
-  return radj
+  	return radj
 
 if __name__=='__main__':
   app.run(host='0.0.0.0', port=5001, debug=True)

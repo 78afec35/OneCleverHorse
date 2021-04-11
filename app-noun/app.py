@@ -15,7 +15,7 @@ randomnoun = random.choice(nounlist)
 @app.route('/noun', methods=["GET"])
 def noun():
 	rnoun = randomnoun
-  return rnoun
+  	return rnoun
 
 if __name__=='__main__':
   app.run(host='0.0.0.0', port=5002, debug=True)

@@ -17,14 +17,14 @@ ssh -tt -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no jenkins@swarm-manager << EO
     docker-compose --version
     docker stack deploy --compose-file /home/jenkins/OneCleverHorse/docker-compose.yaml onecleverhorsestack
     docker stack services onecleverhorsestack
-    docker service scale onecleverhorsestack_appnoun=10
-    docker service scale onecleverhorsestack_appnoun=5
-    docker service scale onecleverhorsestack_appcombiner=10
-    docker service scale onecleverhorsestack_appcombiner=5
-    docker service scale onecleverhorsestack_appfrontend=10
-    docker service scale onecleverhorsestack_appfrontend=5
-    docker service scale onecleverhorsestack_appadjective=10
-    docker service scale onecleverhorsestack_appadjective=5
+    docker service scale onecleverhorsestack_appnoun=6
+    docker service scale onecleverhorsestack_appnoun=3
+    docker service scale onecleverhorsestack_appcombiner=6
+    docker service scale onecleverhorsestack_appcombiner=3
+    docker service scale onecleverhorsestack_appfrontend=6
+    docker service scale onecleverhorsestack_appfrontend=3
+    docker service scale onecleverhorsestack_appadjective=6
+    docker service scale onecleverhorsestack_appadjective=3
     docker stack services onecleverhorsestack
     pwd
 EOF
