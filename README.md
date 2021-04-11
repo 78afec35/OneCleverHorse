@@ -5,6 +5,41 @@ A docker swarm password generator based on an XKCD cartoon
 
 ![XKCD Cartoon in question](https://imgs.xkcd.com/comics/password_strength.png)
 
+## Contents
+* [Intro](#OneCleverHorse)
+* [Architecture](#architecture)
+    * [Microservices Architecture](#Micro-service-architecture-example)
+   * [Production Environment](#database-structure)
+* [Development Environment](#Development-Environment)
+    * [GCP Server Setup](#GCP-Server-Setup)
+    * [Tools](#Tools)
+    * [Takeaways from previous project](#Takeaways-from-previous-project)
+    * [Kanban board](#Kanban-board)
+    * [Docker Compose Installation Script](#Docker-Compose-Installation-Script)
+    * [Tools](#Tools)
+    * [Docker Swarm - Worker Creation Startup Script](#Docker-Swarm---Worker-Creation-Startup-Script)
+* [ Continuous integration / Continuous deployment](#Continuous-integration-/-Continuous-deployment)
+    * [Github - Version control system](#Github---Version-control-system)
+    * [Jenkins - Pipeline and testing](#Jenkins---Pipeline-and-testing)
+    * [Docker Repository - Artifact Repository](#Docker-Repository---Artifact-Repository)
+* [Risk Assesment](#Risk-Assesment)
+* [Tools](#Tools)
+* [Tools](#Tools)
+* [Tools](#Tools)
+* [Tools](#Tools)
+* [Tools](#Tools)
+* [Tools](#Tools)
+* [Tools](#Tools)
+* [Tools](#Tools)
+* [Tools](#Tools)
+* [Tools](#Tools)
+* [Tools](#Tools)
+* [Risk Assessment](#risk-assessment)
+* [Testing](#testing)
+* [Front-End Design](#front-end-design)
+* [Known Issues](#known-issues)
+* [Future Improvements](#future-improvements)
+
 # Architecture
 
 ## Micro-service architecture example 
@@ -135,12 +170,6 @@ Git hub has been used as a version control system. It includes a main branch, a 
 ## Jenkins - Pipeline and testing
 
 Jenkins has been part of the development process since the start this time. 
-You can inspect it on this address <http://34.89.33.141:8080/job/OneCleverHorse/>
-Credentials set up for you:
-
-user: Testing
-
-password: testing
 
 ![Jeknins](./ReadmeAssets/Jenkins.png) 
 
@@ -167,6 +196,7 @@ I initially used BUILD_NUMBER environment variable in Jenkins to automatically t
 + Detailed pipeline
 + Unique Idea
 + Relatively easy to execute
++ Easy to scale up, in fact the project is running on 3 replicas by default
 ### <span style="color:purple">Weaknesses</span>
 + Incomplete
 + Vulnerable to scaling issues
@@ -212,9 +242,9 @@ Project requirements have been kept secret from this cohort untill very recently
 4. This project isn't that important
 5. This project doesn't have that many tools you can do it an hour. 
 6. Failing this project means you fail the cohort. 
-7. Oh you have to use Ansible, don't worry I will teach you now. 
+7. Oh you have to use this software, don't worry I will teach you now. 
 
-The actual document we were provided in the beginning doesn't go into detail of the requirements, whilst the actual marking is very particular of what is required of us. That is unfair. 
+The actual document we were provided in the beginning doesn't go into detail of the requirements, whilst the actual marking is very particular of what is required of us. That is not conducive of effective performance.
 
 ### 5-5 Category: <span style="color:orange">ORANGE</span> Rare, Catastropic Severity - Poor Availibity and Elasticity
 
@@ -232,3 +262,7 @@ Docker Credentials have to be inputted manually which further adds to technical 
 
 This results in the Database not being part of the CI/CD pipeline and becoming vulnerable to configuration errors and mismanagement.
 
+
+# References 
+1. noun list - https://github.com/dariusk/corpora/blob/master/data/words/nouns.json
+2. adjective list - https://github.com/dariusk/corpora/blob/master/data/words/adjs.json
