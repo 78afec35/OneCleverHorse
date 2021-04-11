@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-	rcomb = request.get(localhost:5003/rcomb)
+	rcomb = request.get('http://localhost:5003/rcomb')
     return '<h1>{{rcomb}}</h1>'
 
 if __name__=='__main__':

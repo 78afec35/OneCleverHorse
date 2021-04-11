@@ -118,6 +118,8 @@ This is where I encounter a killer error that I cannot fix at the moment. I am n
 
 The most likely cause for this is that servies are span up in the workers and don't show up on the manager. I am not sure why that is. 
 
+*EDIT*  I have spent a good part of a day exploring what the error is and once I gave up and started to actually code using this pipeline, I figured out that whilst the test deployment with docker-compose passes, stack deploy is more particular about what it deploys, as well as it keeps logs. Ergo the killer error was just me using mock code that didn't work. 
+
 Troubleshooting stages so far include : 
 1. Destroying and recreating the server. 
 2. Removing tags or any kind of capitalisation.
