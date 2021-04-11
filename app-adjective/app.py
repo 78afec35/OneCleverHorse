@@ -14,7 +14,7 @@ for adj in data['adjs']:
 randomadj = random.choice(adjlist)
 
 
-@app.route('/adj', method=["GET"])
+@app.route('/adj', method=["POST"])
 def adj():
     radj = randomadj
     return radj
