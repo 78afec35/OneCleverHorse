@@ -14,7 +14,7 @@ for noun in data['nouns']:
 randomnoun = random.choice(nounlist)
 
 
-@app.route('/noun', method=['GET', 'POST'])
+@app.route('/noun', methods=['GET', 'POST'])
 def noun():
     rnoun = randomnoun
     return rnoun
