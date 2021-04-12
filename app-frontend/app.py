@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
-    rcomb = request.get('http://localhost:5003/rcomb')
+    rcomb = request.args.get('rcomb','http://appnoun:5003/rcomb')
     return render_template('index.html', rcomb=str(rcomb))
 
 
