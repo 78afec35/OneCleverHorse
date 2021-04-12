@@ -47,13 +47,5 @@ SecretStorage==2.3.1
 service-identity==16.0.0
 six==1.11.0
 SQLAlchemy==1.4.7
-ssh-import-id==5.7
-toml==0.10.2
-Twisted==17.9.0
-typing-extensions==3.7.4.3
-ufw==0.36
-unattended-upgrades==0.1
-urllib3==1.26.4
 Werkzeug==1.0.1
 zipp==3.4.1
-zope.interface==4.3.2
