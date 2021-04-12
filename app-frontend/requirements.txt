@@ -1,13 +1,9 @@
-ansible==3.2.0
-ansible-base==2.10.7
-asn1crypto==0.24.0
 attrs==20.3.0
 Automat==0.6.0
 blinker==1.4
 certifi==2020.12.5
 chardet==4.0.0
 click==7.1.2
-cloud-init==20.4
 colorama==0.3.7
 command-not-found==0.3
 configobj==5.0.6
