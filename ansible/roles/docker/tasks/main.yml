@@ -50,4 +50,10 @@
     name: docker-py
     state: latest
 
+- name: Install Requests
+  become: true
+  pip: 
+    name: requests
+    state: latest
+
 
